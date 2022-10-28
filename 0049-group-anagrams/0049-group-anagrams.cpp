@@ -5,14 +5,7 @@ public:
         for(auto s : strs){
             string val = s;
             sort(s.begin(),s.end());
-            if(mp.find(s) != mp.end()){
-                mp[s].push_back(val);
-            }
-            else{
-                vector<string> temp;
-                temp.push_back(val);
-                mp[s] = temp;
-            }
+            mp[s].push_back(val);
         }
         vector<vector<string>> ans;
         for(auto x : mp){

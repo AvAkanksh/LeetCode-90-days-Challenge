@@ -11,52 +11,21 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        int carry = 0 ;
+        int val;
         ListNode *root = new ListNode();
-        int next = 0;
-        int unit;
-        int number;
-        ListNode *prev = new ListNode();
         ListNode *ans = root;
-        while(l1 && l2){
-            number = l1->val + l2->val + next; 
-            unit = (number)%10;
-            next = number/10;
-            ans->val = unit;
-            ans->next = new ListNode();
-            prev = ans;
+        while(l1 || l2 || carry){
+            int l1Value = l1 ? l1->val : 0;
+            int l2Value = l2 ? l2->val : 0;
+            val = l1Value + l2Value + carry;
+            carry = val/10;
+            val = val%10;
+            ans->next = new ListNode(val);
             ans = ans->next;
-            // cout<<unit<<"\t";
-            l1 = l1->next;
-            l2 = l2->next;
+            l1 = (l1&&l1->next) ? l1->next : nullptr;
+            l2 = (l2&&l2->next) ? l2->next : nullptr;
         }
-        while(l1){
-            number = l1->val + next; 
-            unit = (number)%10;
-            next = number/10;
-            ans->val = unit;
-            ans->next = new ListNode();
-            prev = ans;
-            ans = ans->next;
-            // cout<<unit<<"\t";
-            l1 = l1->next;
-        }
-        while(l2){
-            number = l2->val + next; 
-            unit = (number)%10;
-            next = number/10;
-            ans->val = unit;
-            ans->next = new ListNode();
-            prev = ans;
-            ans = ans->next;
-            // cout<<unit<<"\t";
-            l2 = l2->next;
-        }
-        if(next==0){
-            prev->next = nullptr;
-        }
-        else{
-            ans->val = next;
-        }
-        return root;
+        return root->next;
     }
 };

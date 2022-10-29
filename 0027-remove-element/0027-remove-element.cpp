@@ -5,12 +5,13 @@ public:
         int count = 0;
         for(int i = 0 ; i<n ; i++){
             if(nums[i]==val){
-                count++;
+                continue;
             }
             else{
-                nums[i-count]=nums[i];
+                nums[count]=nums[i];
+                count++;
             }
         }
-        return n-count;
+        return count;
     }
 };

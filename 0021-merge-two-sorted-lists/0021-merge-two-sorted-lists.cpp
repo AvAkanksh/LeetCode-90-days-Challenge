@@ -24,15 +24,11 @@ public:
             }
             ans = ans->next;
         }
-        while(list1){
-            ans->next = new ListNode(list1->val);
-            list1 = list1->next;
-            ans = ans->next;
+        if(list1){
+            ans->next = list1;
         }
-        while(list2){
-            ans->next = new ListNode(list2->val);
-            list2 = list2->next;
-            ans = ans->next;
+        else{
+            ans->next = list2;
         }
         return root->next;
     }

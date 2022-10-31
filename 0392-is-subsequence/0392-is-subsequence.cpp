@@ -1,18 +1,10 @@
 class Solution {
 public:
     bool isSubsequence(string s, string t) {
-        stack<char> mystack;
-        for(auto x : s){
-            mystack.push(x);
+
+        for(int i = t.size()-1 ; i>=0 && !s.empty(); i--){
+            if(t[i]==s[s.size()-1]){s.pop_back();}
         }
-        int i = t.size()-1;
-        while(!mystack.empty() && i>=0 ){
-            if(t[i]==mystack.top()){
-                mystack.pop();
-            }
-            i--;
-        }
-        if(!mystack.empty()){return false;}
-        return true;
+        return s.empty();
     }
 };

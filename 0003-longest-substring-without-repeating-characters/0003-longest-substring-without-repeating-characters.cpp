@@ -5,9 +5,6 @@ public:
         int l = 0;
         int r = 0;
         unordered_set<char> myset;
-        // myset.insert(s[r]);
-        // r++;
-        // ans = r-l;
         int n = s.size();
         while(l<n && r<n){
             if(myset.find(s[r])==myset.end()){

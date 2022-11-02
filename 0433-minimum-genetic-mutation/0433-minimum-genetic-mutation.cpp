@@ -17,11 +17,7 @@ public:
             string new_gene ;
             for(int i = 0 ; i<8 ; i++){
                 for (auto x : c){
-                    // cout<<"hi"<<endl;
                     new_gene = s.substr(0,i) + x + s.substr(i+1);
-                    // cout<<new_gene<<endl;
-                    // cout<<end<<endl;
-                    // cout<<"--------"<<endl;
                     if(myBank.find(new_gene)!=myBank.end() && visited.find(new_gene)==visited.end()){
                         q.push({new_gene,level+1});
                         visited.insert(new_gene);

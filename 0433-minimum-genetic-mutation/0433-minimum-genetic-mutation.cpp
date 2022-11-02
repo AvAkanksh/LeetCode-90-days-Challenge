@@ -5,7 +5,7 @@ public:
         unordered_set<string> visited;
         queue<pair<string,int>> q;
         q.push({start,0});
-        visited.insert(start);
+        myBank.erase(start);
         vector<char> c = {'A','C','G','T'};
         while(!q.empty()){
             string s = q.front().first;
@@ -18,9 +18,9 @@ public:
             for(int i = 0 ; i<8 ; i++){
                 for (auto x : c){
                     new_gene = s.substr(0,i) + x + s.substr(i+1);
-                    if(myBank.find(new_gene)!=myBank.end() && visited.find(new_gene)==visited.end()){
+                    if(myBank.find(new_gene)!=myBank.end()){
                         q.push({new_gene,level+1});
-                        visited.insert(new_gene);
+                        myBank.erase(new_gene);
                     }
                 }
             }

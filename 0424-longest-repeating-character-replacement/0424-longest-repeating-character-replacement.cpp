@@ -21,7 +21,7 @@ public:
                     len = i-l+1;
                 }
             }
-            ans = max(ans,i-l+1);
+            ans = max(ans,len);
         }
         return ans;
     }

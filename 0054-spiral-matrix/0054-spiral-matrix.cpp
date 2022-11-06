@@ -4,16 +4,6 @@ public:
         int rows = matrix.size();
         int cols = matrix[0].size();
         vector<int> ans;
-        if(rows == 1){
-            return matrix[0]; 
-        }
-        if(cols == 1){
-            for(int i = 0 ; i<rows ; i++){
-                ans.push_back(matrix[i][0]);
-            }
-            return ans;
-        }
-        else{
             int t = 0 ;
             int b = rows-1;
             int l = 0 ;
@@ -40,7 +30,6 @@ public:
                 l++;
             }       
             return ans;
-        }
         
     }
 };

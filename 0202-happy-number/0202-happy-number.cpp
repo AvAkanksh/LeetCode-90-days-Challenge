@@ -10,15 +10,9 @@ public:
     }
     
     bool isHappy(int n) {
-        int prev = n;
-        int original = n;
-        n = sumSquare(prev);
-        if(n==1){
-            return true;
-        }
+    
         while(true){
-            prev = n;
-            n = sumSquare(prev);
+            n = sumSquare(n);
             if(n==4){
                 return false;
             }

@@ -5,7 +5,7 @@ public:
         int n = encoded.size();
         arr.push_back(first);
         for(int i = 0 ; i<n; i++){
-            arr.push_back(arr.back()^encoded[i]);
+            arr.emplace_back(arr.back()^encoded[i]);
         }
         return arr;
     }

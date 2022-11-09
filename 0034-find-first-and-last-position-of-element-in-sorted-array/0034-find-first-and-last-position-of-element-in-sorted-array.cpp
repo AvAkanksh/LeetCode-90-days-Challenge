@@ -45,9 +45,19 @@ public:
     }
     
     vector<int> searchRange(vector<int>& nums, int target) {
-        int first = bsf(nums,target);
-        int last = bsl(nums,target);
-        vector<int> ans = {first,last};
-        return ans;
+        // int first = bsf(nums,target);
+        // int last = bsl(nums,target);
+        // vector<int> ans = {first,last};
+        // return ans;
+        
+        auto stlfirst = lower_bound(nums.begin(),nums.end(),target);
+        auto stllast = upper_bound(nums.begin(),nums.end(),target);
+        
+        if(stlfirst == nums.end() || *stlfirst != target){return {-1,-1} ;}
+        else{
+            
+            vector<int> ans = {int(stlfirst-nums.begin()), int(stllast-nums.begin())-1};
+            return ans;
+        }
     }
 };

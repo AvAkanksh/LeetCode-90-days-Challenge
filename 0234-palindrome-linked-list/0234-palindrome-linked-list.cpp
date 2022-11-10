@@ -32,7 +32,7 @@ public:
                 return false;
             }
             else{
-                cout<<fast->val<<" "<<slow->val<<endl;
+                // cout<<fast->val<<" "<<slow->val<<endl;
                 fast = fast->next;
                 slow = slow->next;
             }

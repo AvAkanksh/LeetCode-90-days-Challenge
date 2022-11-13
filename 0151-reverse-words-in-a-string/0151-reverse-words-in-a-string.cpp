@@ -13,7 +13,9 @@ public:
                 j--;
             }
             string sub = s.substr(j+1,i-j);
- 
+            if(sub==""){
+                continue;
+            }
             if(ans ==""){
                 ans = sub;
             }
@@ -22,9 +24,9 @@ public:
             }
             i= j-1;
         }
-        if(ans[ans.size()-1]==' '){
-            ans.resize(ans.size()-1);
-        }
+        // if(ans[ans.size()-1]==' '){
+        //     ans.resize(ans.size()-1);
+        // }
         return ans;
     }
 };

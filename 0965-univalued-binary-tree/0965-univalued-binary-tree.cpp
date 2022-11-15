@@ -20,15 +20,8 @@ public:
     }
     
     bool isUnivalTree(TreeNode* root) {
-        if(root==NULL){return true;}
+        if(root == NULL){return true;}
         int val = root->val;
-        bool lcheck, rcheck;
-        lcheck = check(root->left,val);
-        if(lcheck){
-            if(check(root->right,val)){
-                return true;
-            }
-        }
-        return false;
+        return check(root,val);
     }
 };

@@ -6,10 +6,10 @@ public:
         set<int> l;
         unordered_map<int,int> lcount;
         for(int i = 0 ; i<n ; i++){
-            vector<int> curr = matches[i];
-            w.insert(curr[0]);
-            l.insert(curr[1]);
-            lcount[curr[1]]++;
+            
+            w.insert(matches[i][0]);
+            l.insert(matches[i][1]);
+            lcount[matches[i][1]]++;
         }
         vector<vector<int>> ans;
         vector<int> ans0;

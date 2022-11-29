@@ -1,7 +1,7 @@
 class RandomizedSet {
     unordered_map<int,int> m;
     vector<int> v;
-public:
+    public:
     RandomizedSet() {
         srand(time(0));
     }
@@ -10,8 +10,8 @@ public:
         if(m.find(val)!=m.end()){
             return false;
         }
+        m[val] = v.size();
         v.emplace_back(val);
-        m[val] = v.size()-1;
         return true;
     }
     
@@ -21,7 +21,7 @@ public:
         }
         int last = v.back();
         m[last] = m[val];
-        v[m[val]] = last;
+        v[m[val]] = last; 
         v.pop_back();
         m.erase(val);
         return true;

@@ -9,7 +9,6 @@ public:
                 count++;
             }
         }
-        // cout<<count<<endl;
         for(int i = n/2 ; i<n ; i++){
             if(st.find(s[i])!=st.end()){
                 count--;

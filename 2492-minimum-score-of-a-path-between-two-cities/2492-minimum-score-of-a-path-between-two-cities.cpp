@@ -15,9 +15,7 @@ public:
             int curr = q.front();
             q.pop();
             for(auto x : adj[curr]){
-                // cout<<x.first<<" "<<visited[x.first]<<endl;
                 if(!visited[x.first]){
-                    // cout<<"pushing"<<endl;
                     q.push(x.first);
                     visited[x.first] = 1;
                 }

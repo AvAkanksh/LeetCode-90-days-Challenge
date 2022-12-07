@@ -11,8 +11,14 @@
  */
 class Solution {
 public:
+    int depth(TreeNode* root){
+        if(root == NULL){return 0;}
+        return max(depth(root->left),depth(root->right))+1;
+    }
+    
     vector<vector<int>> levelOrderBottom(TreeNode* root) {
-        vector<vector<int>> ans;
+        int d = depth(root);
+        vector<vector<int>> ans(d);
         if(root == NULL){return ans;}
         queue<TreeNode* >q;
         q.push(root);
@@ -26,9 +32,10 @@ public:
                 if(curr->left){q.push(curr->left);}
                 if(curr->right){q.push(curr->right);}
             }
-            ans.push_back(subans);
+            ans[d-1]=subans;
+            d--;
         }
-        reverse(ans.begin(),ans.end());
+        // reverse(ans.begin(),ans.end());
         return ans;
         
     }

@@ -29,20 +29,13 @@ public:
                 int nx = r+d[i];
                 int ny = c+d[i+1];
                 if(nx>=0 && ny>=0 && nx<n &&ny <m && grid[nx][ny]==1){
-                    // cout<<"\t"<<nx<<" "<<ny<<endl;
                     fresh_count--;
                     grid[nx][ny] = 2;
                     q.push({{nx,ny},t+1});
                 }
             }
         }
-        // for(auto x: grid){
-        //     for(auto y : x){
-        //         if(y==1){
-        //             return -1;
-        //         }
-        //     }
-        // }
+
         return fresh_count==0?tmax:-1;
     }
 };

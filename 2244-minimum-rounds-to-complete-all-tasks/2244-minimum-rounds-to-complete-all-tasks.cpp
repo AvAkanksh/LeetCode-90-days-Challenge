@@ -7,7 +7,6 @@ public:
         }
         int count = 0;
         for(auto x : m){
-            cout<<x.first<<" "<<x.second<<endl;
             if(x.second!=1){
                 count+=ceil((float)x.second/3.0);
                 

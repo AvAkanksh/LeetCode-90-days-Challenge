@@ -1,29 +1,29 @@
 class Solution {
 public:
     int maxPoints(vector<vector<int>>& points) {
-        int result = 0;
-        for(int i = 0; i < points.size(); i++){
-            int samePoint = 1;
-            unordered_map<double, int> map;
-            for(int j = i + 1; j < points.size(); j++){
-                if(points[i][0] == points[j][0] && points[i][1] == points[j][1]){
+        int ans = 0;
+        for(int i = 0 ; i<points.size() ;i++){
+            int samePoint =1;
+            unordered_map<double,int> mp;
+            for(int j = i+1 ; j <points.size() ; j++){
+                if(points[i][0]==points[j][0]&& points[i][1]==points[j][1]){
                     samePoint++;
                 }
-                else if(points[i][0] == points[j][0]){
-                    map[INT_MAX]++;
+                else if(points[i][0]==points[j][0]){
+                    mp[INT_MAX]++;
                 }
                 else{
-                    double slope = double(points[i][1] - points[j][1]) / double(points[i][0] - points[j][0]);
-                    map[slope]++;
+                    double slope = double(points[i][1]-points[j][1])/double(points[i][0]-points[j][0]);
+                    mp[slope]++;
                 }
             }
             int localMax = 0;
-            for(auto it = map.begin(); it != map.end(); it++){
-                localMax = max(localMax, it->second);
+            for(auto x : mp){
+                localMax = max(x.second,localMax);
             }
-            localMax += samePoint;
-            result = max(result, localMax);
+            localMax+=samePoint;
+            ans = max(ans,localMax);
         }
-        return result;
+        return ans;
     }
 };

@@ -30,12 +30,9 @@ public:
             for(int i = 0 ; i<count ; i++){
                 pair<int,int> curr = q.front();
                 q.pop();
-                int r = curr.first;
-                int c = curr.second;
-                // cout<<r<<" "<<c<<endl;
                 for(int i = 0 ; i<4 ; i++){
-                    int nr = r+d[i];
-                    int nc = c+d[i+1];
+                    int nr = curr.first+d[i];
+                    int nc = curr.second+d[i+1];
                     if(nc>=0 && nr>=0 && nc<m&&nr<n && grid[nr][nc]==0&&visited[nr][nc]==0){
                         q.push({nr,nc});
                         visited[nr][nc]=1;

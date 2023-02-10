@@ -32,7 +32,7 @@ public:
                 q.pop();
                 int r = curr.first;
                 int c = curr.second;
-                cout<<r<<" "<<c<<endl;
+                // cout<<r<<" "<<c<<endl;
                 for(int i = 0 ; i<4 ; i++){
                     int nr = r+d[i];
                     int nc = c+d[i+1];

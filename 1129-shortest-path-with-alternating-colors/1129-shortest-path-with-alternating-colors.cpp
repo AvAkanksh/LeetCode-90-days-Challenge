@@ -16,34 +16,26 @@ public:
         }
         queue<pair<pair<int,int>,int>> q;
         q.push({{0,0},-1});
-        unordered_set<string>visitedRed,visitedBlue;
-        visitedRed.insert("0_-1");
-        visitedBlue.insert("0_-1");
+        vector<bool> visb(n,false);
+        vector<bool> visr(n,false);
+        visr[0]=true;
+        visb[0]=true;
         while(!q.empty()){
             pair<pair<int,int>,int> curr = q.front();
             q.pop();
-            cout<<curr.first.first<<" "<<curr.first.second<<" "<<curr.second<<endl;
             if(ans[curr.first.first]==-1){ans[curr.first.first]=curr.first.second;}
-            cout<<"ans["<<curr.first.first<<"] : "<<ans[curr.first.first]<<endl;
-            // else{ans[curr.first.first]= min(curr.first.second,ans[curr.first.first]);}
             if(curr.second!=1){
                 for(auto x : blueAdjList[curr.first.first] ){
-                cout<<"blue"<<endl;
-
-                    string strCheck = to_string(x)+"_"+to_string(curr.second);
-                    if(!visitedBlue.count(strCheck)){
-                        visitedBlue.insert(strCheck);
+                    if(!visb[x]){
+                        visb[x]=true;        
                         q.push({{x,curr.first.second+1},1});
                     }
                 }
             }
             if(curr.second!=0){
                 for(auto x : redAdjList[curr.first.first] ){
-                    cout<<"red"<<endl;
-                    cout<<x<<endl;
-                    string strCheck = to_string(x)+"_"+to_string(curr.second);
-                    if(!visitedRed.count(strCheck)){
-                        visitedRed.insert(strCheck);
+                    if(!visr[x]){
+                        visr[x]=true;
                         q.push({{x,curr.first.second+1},0});
                     }
                 }

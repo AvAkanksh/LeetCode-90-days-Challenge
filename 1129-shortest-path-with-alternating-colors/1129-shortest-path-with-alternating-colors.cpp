@@ -25,7 +25,7 @@ public:
             q.pop();
             if(ans[curr.first.first]==-1){ans[curr.first.first]=curr.first.second;}
             if(curr.second!=1){
-                for(auto x : blueAdjList[curr.first.first] ){
+                for(auto &x : blueAdjList[curr.first.first] ){
                     if(!visb[x]){
                         visb[x]=true;        
                         q.push({{x,curr.first.second+1},1});
@@ -33,7 +33,7 @@ public:
                 }
             }
             if(curr.second!=0){
-                for(auto x : redAdjList[curr.first.first] ){
+                for(auto &x : redAdjList[curr.first.first] ){
                     if(!visr[x]){
                         visr[x]=true;
                         q.push({{x,curr.first.second+1},0});

@@ -2,7 +2,7 @@ class Solution {
 public:
     int dfs(int node , int parent ,vector<vector<int>>&adj, long long &ans,int &seats){
         int passengers = 0;
-        for(auto child : adj[node]){
+        for(auto &child : adj[node]){
             if(child!=parent){
                 passengers += dfs(child,node, adj, ans,seats);
             }

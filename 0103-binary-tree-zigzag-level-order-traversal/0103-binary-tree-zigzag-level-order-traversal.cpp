@@ -29,11 +29,11 @@ public:
                 if(curr->right){q.push(curr->right);}
             }
             if(order){
-                cout<<"straight"<<endl;
+                // cout<<"straight"<<endl;
                 ans.push_back(subans);
             }
             else{
-                cout<<"reversed"<<endl;
+                // cout<<"reversed"<<endl;
                 reverse(subans.begin(),subans.end());
                 ans.push_back(subans);
             }

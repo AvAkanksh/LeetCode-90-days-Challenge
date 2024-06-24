@@ -5,7 +5,6 @@ public:
         stack<int> s;
         for(int i = 0 ; i<asteroids.size() ; i++){
             int flag = true;
-            cout<<"hi : "<<asteroids[i]<<endl;
             while(s.size()>0 and asteroids[i]<0 and s.top()>0){
                 if(s.top()+asteroids[i]<0){
                     s.pop();
@@ -18,7 +17,6 @@ public:
                     break;
                 }
             }
-            cout<<"flag : "<<flag<<endl;
             if(flag){
                 s.push(asteroids[i]);
             }

@@ -3,20 +3,17 @@ public:
     vector<int> asteroidCollision(vector<int>& asteroids) {
         stack<int> s;
         for(int i = 0 ; i<asteroids.size() ; i++){
-            int flag = true;
             while(s.size()>0 and asteroids[i]<0 and s.top()>0){
                 if(s.top()+asteroids[i]<0){
                     s.pop();
                 }else if( s.top()+asteroids[i]==0){
                     s.pop();
-                    flag = false;
-                    break;
+                    asteroids[i] = 0;
                 }else{
-                    flag = false;
-                    break;
+                    asteroids[i]= 0;
                 }
             }
-            if(flag){
+            if(asteroids[i]){
                 s.push(asteroids[i]);
             }
         }

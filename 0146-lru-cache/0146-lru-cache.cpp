@@ -1,8 +1,8 @@
-// static auto fastio = [](){
-//     std::ios_base::sync_with_stdio(false);
-//     std::cin.tie(nullptr);
-//     std::cout.tie(nullptr);
-// };
+static auto fastio = [](){
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    std::cout.tie(nullptr);
+};
 
 class LRUCache {
 public:
@@ -28,7 +28,7 @@ public:
     unordered_map<int,node*> mp;
     
     LRUCache(int capacity) {
-        // fastio();
+        fastio();
         cap = capacity;
         head->next = tail;
         tail->prev = head;

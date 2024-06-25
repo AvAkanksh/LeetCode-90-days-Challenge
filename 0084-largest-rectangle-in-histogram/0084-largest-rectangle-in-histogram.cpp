@@ -1,6 +1,14 @@
+static auto fastio = [](){
+    std::ios_base::sync_with_stdio(false);
+    std::cout.tie(nullptr);
+    std::cin.tie(nullptr);
+};
+
 class Solution {
 public:
+    
     int largestRectangleArea(vector<int>& heights) {
+        fastio();
         int ans = 0;
         int n = heights.size();
         vector<int> nsl(n,-1) ; 

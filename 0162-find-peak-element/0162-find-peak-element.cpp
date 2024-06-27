@@ -1,6 +1,13 @@
+static auto fastio = [](){
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    std::cout.tie(nullptr);
+};
+
 class Solution {
 public:
     int findPeakElement(vector<int>& nums) {
+        fastio();
         int n = nums.size();
         if(n==1){
             return 0; 

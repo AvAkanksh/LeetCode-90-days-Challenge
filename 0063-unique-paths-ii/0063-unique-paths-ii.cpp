@@ -1,6 +1,13 @@
+const auto fastio = [](){
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+};
+
 class Solution {
 public:
     int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
+        fastio();
         int n = obstacleGrid.size();
         int m = obstacleGrid[0].size();
         vector<int> prev(m,0);

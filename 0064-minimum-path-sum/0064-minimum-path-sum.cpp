@@ -1,6 +1,13 @@
+const auto fastio = [](){
+  ios_base::sync_with_stdio(0);
+    cout.tie(0);
+    cin.tie(0);
+};
+
 class Solution {
 public:
     int minPathSum(vector<vector<int>>& grid) {
+        fastio();
         int n = grid.size();
         int m = grid[0].size();
         

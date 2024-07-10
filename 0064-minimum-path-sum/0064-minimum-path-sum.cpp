@@ -1,14 +1,5 @@
 class Solution {
 public:
-    void printdp(vector<vector<int>>&dp){
-        for(auto x : dp){
-            for(auto y : x){
-                cout<<y<<" ";
-            }
-            cout<<endl;
-        }
-    }
-    
     int minPathSum(vector<vector<int>>& grid) {
         int n = grid.size();
         int m = grid[0].size();
@@ -33,7 +24,6 @@ public:
 
             }
         }
-        // printdp(dp);
         return dp[n-1][m-1];
     }
 };

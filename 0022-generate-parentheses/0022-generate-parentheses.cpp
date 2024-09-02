@@ -1,7 +1,7 @@
 class Solution {
 public:
     void helper(int open, int close,  string s, vector<string>&ans,int n){
-        if(open == n and close == n){
+        if( close == n){
             ans.push_back(s);
             return ;
         }

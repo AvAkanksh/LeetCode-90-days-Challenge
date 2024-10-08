@@ -1,14 +1,5 @@
 class Solution {
-public:
-    void printStack(stack<char>st){
-        string s = "";
-        while(!st.empty()){
-            s = st.top() + s;
-            st.pop();
-        }
-        cout<<s<<endl;
-    }
-    
+public:    
     int minSwaps(string s) {
         stack<char> st;
         for(int i = 0 ; i<s.size() ; i++){
@@ -17,7 +8,6 @@ public:
             }else{
                 st.push(s[i]);
             }
-            // printStack(st);
         }
         if(st.empty()){
             return 0;

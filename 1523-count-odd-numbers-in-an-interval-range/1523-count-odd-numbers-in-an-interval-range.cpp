@@ -1,10 +1,15 @@
 class Solution {
 public:
     int countOdds(int low, int high) {
-//         e o 1
-//         o o 1
-//         o e 1
-//         e e 0
-        return (low%2==0&&high%2==0)?(high-low)/2:(high-low)/2+1;
+        int ans = 0 ; 
+        if(low%2==0 and high%2==0){
+            return (high-low)/2;
+        }else if(low%2 == 1 and high%2==0){
+            return (high-low+1)/2;
+        }else if(low%2 ==1 and high %2==1){
+            return (high-low)/2 + 1;
+        }else{
+            return (high-low+1)/2;
+        }
     }
 };

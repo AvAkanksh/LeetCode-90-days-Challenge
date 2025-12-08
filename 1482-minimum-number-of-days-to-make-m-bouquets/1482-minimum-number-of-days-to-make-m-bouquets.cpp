@@ -11,10 +11,10 @@ public:
                 count=0;
             }
         }
-        cout<<"count"<<count<<endl;
-        cout<<"k"<<k<<endl;
+        // cout<<"count"<<count<<endl;
+        // cout<<"k"<<k<<endl;
         ans += count/k;
-        cout<<"ans"<<ans<<endl;
+        // cout<<"ans"<<ans<<endl;
         // if(count>0){
         //     ans+= int(count/k);
         // }
